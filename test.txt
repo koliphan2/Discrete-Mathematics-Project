@@ -1,0 +1,26 @@
+Schemes:
+   A(a)
+   B(b)
+   DeaUoo(a,b,c,d,e)
+   DeaVoo(a,b,c,d,e)
+   DeaWoo(a,b,c,d,e)
+
+Facts:
+   A('a').
+   A('z').
+   B('b').
+   DeaWoo('a','b','c','d','e').
+
+Rules: 
+   DeaWoo(A,B,C,D,E):-A(E),B(D),A(A),B(B),A(C).
+   DeaWoo(E,D,C,B,A):-DeaWoo(A,B,C,D,E),A(B),B(A). 
+   DeaVoo(E,D,C,B,A):-DeaUoo(A,B,C,D,E),B(D).
+
+Queries:
+   DeaUoo(A,B,C,D,E)? 
+   DeaUoo(A,B,'a',D,E)?
+   DeaVoo(A,B,'a',D,E)?
+   DeaUoo(A,B,'b',D,E)?
+   DeaWoo(A,B,'a',D,Applestrudle)?
+   DeaWoo(A,B,'a',D,E)?
+   DeaWoo('a','a','a','a','b')?
